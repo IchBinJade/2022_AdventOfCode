@@ -16,6 +16,12 @@ class TestDay03(unittest.TestCase):
         actual = part_one(input)
         expected = 157
         self.assertEqual(actual, expected, "Should return 157")
+        
+    def test_part_two(self):
+        input = ["vJrwpWtwJgWrhcsFMMfFFhFp", "jqHRNqRjqzjGDLGLrsFMfFZSrLrFZsSL", "PmmdzqPrVvPwwTWBwg", "wMqvLMZHhHMvwLHjbvcjnnSBnvTQFn", "ttgJtRGJQctTZtZT", "CrZsJsPPZsGzwwsLwLmpwMDw"]
+        actual = part_two(input)
+        expected = 70
+        self.assertEqual(actual, expected, "Should return 70")
 
 
 if __name__ == "__main__":
