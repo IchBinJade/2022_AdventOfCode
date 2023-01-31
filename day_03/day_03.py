@@ -32,6 +32,27 @@ def part_one(input):
     return total_priority
 
 
+def part_two(input):
+    lowers = string.ascii_lowercase
+    uppers = string.ascii_uppercase
+    priority = 0
+    total_priority = 0
+
+    while len(input) > 0:
+        first = set(input.pop())
+        second = set(input.pop())
+        third = set(input.pop())
+        common = next(iter(first.intersection(second, third)))
+        if common in lowers:
+            priority = 1 + lowers.index(common)
+        elif common in uppers:
+            priority = 27 + uppers.index(common)
+        
+        total_priority += priority
+
+    return total_priority
+    
+
 if __name__ == "__main__":
     t1 = time.time()
 
@@ -43,6 +64,7 @@ if __name__ == "__main__":
     
     # Get Solutions
     print(f"Part 1 = {part_one(inp_list)}")
+    print(f"Part 2 = {part_two(inp_list)}")
     
     # Execution time
     t2 = time.time()
